@@ -14,7 +14,7 @@ namespace FGWeek3
         [NonSerialized] public bool isJumping;
 
         [SerializeField] private CharacterData characterData;
-        [SerializeField] private float groundCheckDistance = 1.2f;
+        //[SerializeField] private float groundCheckDistance = 1.2f;
 
         private Transform playerTransform;
         private Rigidbody body;
