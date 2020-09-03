@@ -37,6 +37,29 @@ namespace FGWeek3
         private void updateCameraPosition()
         {
             transform.position = playerTransform.position;
+
+
+
+            RaycastHit rayHit;
+
+            Vector3 direction = playerCamera.transform.position - transform.position;
+            
+            Vector3 newCameraPosition = playerCamera.transform.localPosition;
+
+            //TODO: Magic number
+            if (Physics.SphereCast(transform.position, 0.3f, direction, out rayHit, cameraOffset))
+            {
+                newCameraPosition.z = -rayHit.distance;
+                playerCamera.transform.localPosition = newCameraPosition;
+
+            }
+            else
+            {
+                playerCamera.transform.localPosition =  new Vector3(0, 0, -cameraOffset);
+            }
+
+
+            //transform.position = playerTransform.position;
         }
 
         public void updateRotation()

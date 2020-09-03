@@ -12,9 +12,7 @@ namespace FGWeek3
         public static PlayerCamera CameraBehaviour { get; private set; }
         public static Transform PlayerCameraTransform { get; private set; }
         public static GameObject PlayerCharacter { get; private set; }
-
-        //TODO: NEEDED?
-        public static Rigidbody PlayerBody { get; private set; }
+        
         public static bool LockCursor 
         {
             set { Cursor.lockState = value ? CursorLockMode.Locked : CursorLockMode.None; }
@@ -26,7 +24,6 @@ namespace FGWeek3
             PlayerCameraTransform = PlayerCamera.transform;
             CameraBehaviour = PlayerCamera.GetComponentInParent<PlayerCamera>();           
             PlayerCharacter = FindObjectOfType<CharacterMovement>().gameObject;
-            PlayerBody = PlayerCharacter.GetComponent<Rigidbody>();
         }
 
         private void OnEnable()
