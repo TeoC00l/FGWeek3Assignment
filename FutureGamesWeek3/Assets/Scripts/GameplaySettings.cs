@@ -1,4 +1,4 @@
-﻿//@Author: Teodor Tysklind | FutureGames | Teodor.Tysklind@FutureGames.nu
+﻿//@Author: Teodor Tysklind / FutureGames / Teodor.Tysklind@FutureGames.nu
 
 using UnityEngine;
 

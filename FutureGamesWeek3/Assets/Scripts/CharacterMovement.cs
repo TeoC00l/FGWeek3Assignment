@@ -1,4 +1,4 @@
-﻿//@Author: Teodor Tysklind | FutureGames | Teodor.Tysklind@FutureGames.nu
+﻿//@Author: Teodor Tysklind / FutureGames / Teodor.Tysklind@FutureGames.nu
 
 using System;
 using UnityEngine;
@@ -14,13 +14,12 @@ namespace FGWeek3
         [NonSerialized] public bool isJumping;
 
         [SerializeField] private CharacterData characterData;
-        //[SerializeField] private float groundCheckDistance = 1.2f;
 
         private Transform playerTransform;
         private Rigidbody body;
         private Vector3 moveDirection;
-        private float currentSpeed;
         private Vector3 upwardsVelocity;
+        private float currentSpeed;
 
         private void Awake()
         {
@@ -30,6 +29,7 @@ namespace FGWeek3
             if (characterData == null)
             {
                 characterData = Resources.Load("Scriptable Objects/PlayerCharacter") as CharacterData;
+                
             }
         }
 
@@ -38,7 +38,6 @@ namespace FGWeek3
             Jump();
             SetRotation();
             SetVelocity();
-
         }
 
         private void SetVelocity()

@@ -1,4 +1,4 @@
-﻿//@Author: Teodor Tysklind | FutureGames | Teodor.Tysklind@FutureGames.nu
+﻿//@Author: Teodor Tysklind / FutureGames / Teodor.Tysklind@FutureGames.nu
 
 using UnityEngine;
 
@@ -7,11 +7,11 @@ namespace FGWeek3
     public class PlayerInput : MonoBehaviour
     {
         private CharacterMovement characterMovement;
-        private PlayerCamera cameraBehaviour;
+        private PlayerCameraMovement cameraMovement;
         
         private void Awake()
         {
-            cameraBehaviour = GameManager.CameraBehaviour;
+            cameraMovement = GameManager.PlayerCameraMovement;
             characterMovement = GetComponent<CharacterMovement>();
         }
 
@@ -21,7 +21,7 @@ namespace FGWeek3
             characterMovement.sidewaysInput = Input.GetAxis("Horizontal");
             characterMovement.turnInput = Input.GetAxis("Mouse X") * GameplaySettings.mouseSensitivity.x;
             characterMovement.isJumping = Input.GetKeyDown(KeyCode.Space);
-            cameraBehaviour.pitchInput = Input.GetAxis("Mouse Y") * GameplaySettings.mouseSensitivity.y;
+            cameraMovement.pitchInput = Input.GetAxis("Mouse Y") * GameplaySettings.mouseSensitivity.y;
         }
         
     }

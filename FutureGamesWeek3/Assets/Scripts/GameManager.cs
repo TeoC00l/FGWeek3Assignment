@@ -1,4 +1,4 @@
-﻿//@Author: Teodor Tysklind | FutureGames | Teodor.Tysklind@FutureGames.nu
+﻿//@Author: Teodor Tysklind / FutureGames / Teodor.Tysklind@FutureGames.nu
 
 using UnityEngine;
 
@@ -8,9 +8,7 @@ namespace FGWeek3
     public class GameManager : MonoBehaviour
     {
         public static Camera PlayerCamera { get; private set; }
-
-        public static PlayerCamera CameraBehaviour { get; private set; }
-        public static Transform PlayerCameraTransform { get; private set; }
+        public static PlayerCameraMovement PlayerCameraMovement { get; private set; }
         public static GameObject PlayerCharacter { get; private set; }
         
         public static bool LockCursor 
@@ -21,8 +19,7 @@ namespace FGWeek3
         private void Awake()
         {
             PlayerCamera = Camera.main;
-            PlayerCameraTransform = PlayerCamera.transform;
-            CameraBehaviour = PlayerCamera.GetComponentInParent<PlayerCamera>();           
+            PlayerCameraMovement = PlayerCamera.GetComponentInParent<PlayerCameraMovement>();           
             PlayerCharacter = FindObjectOfType<CharacterMovement>().gameObject;
         }
 

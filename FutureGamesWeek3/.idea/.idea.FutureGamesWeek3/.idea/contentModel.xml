@@ -11,6 +11,7 @@
           <e p="CharacterMovement.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GameplaySettings.cs" t="Include" />
+          <e p="PlayerCameraMovement.cs" t="Include" />
           <e p="PlayerInput.cs" t="Include" />
         </e>
       </e>
